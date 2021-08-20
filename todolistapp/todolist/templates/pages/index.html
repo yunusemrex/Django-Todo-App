@@ -42,7 +42,7 @@ Tasks
                     {{task.title}}
                 {% endif %}
                 
-                | <a href="{% url "update-task" task.id %}">Update</a> | <a href="{% url "delete_task" task.id %}">Delete</a> 
+                | <a href="{% url "update-task" task.id %}">Update</a> | <a href="{% url "delete_task" task.id %}">Delete</a> |  <a href="{% url "task_detail" task.id %}">Detail</a> 
             
             </li>
         {% endfor %}

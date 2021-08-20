@@ -1,4 +1,4 @@
-from django.shortcuts import redirect, render
+from django.shortcuts import get_object_or_404, redirect, render
 from .forms import TaskForm
 from .models import Task
 
@@ -35,4 +35,12 @@ def delete_task(request, pk):
     task = Task.objects.get(id=pk)
     task.delete()
     return redirect("index")
+
+
+def task_detail(request, id):
+    task = get_object_or_404(Task, pk=id)
+    return render(request, "pages/task-detail.html", context={
+        "task": task
+    })
+    
     
