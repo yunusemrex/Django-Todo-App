@@ -36,7 +36,7 @@ Tasks
     <ol>
         {% for task in tasks %}
             <li>
-                {% if task.completed == True %}
+                {% if task.is_completed == True %}
                 <strike>{{task.title}}</strike>
                 {% else %}
                     {{task.title}}

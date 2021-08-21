@@ -3,7 +3,26 @@
 {% block title %} Task Detail {% endblock %}
 
 {% block content %}
+
 <h2>Todo Detail</h3>
     <hr>
-<h3>{{ task.detail }}</h>
-{% endblock %}
+    <h3>{{ task.detail }}</h>
+        {% if task.is_completed == True %}
+        <div class="alert alert-success d-flex align-items-center w-25" role="alert">
+            <svg class="bi flex-shrink-0 me-2" width="24" height="24" role="img" aria-label="Success:"><use xlink:href="#check-circle-fill"/></svg>
+            <div>
+                Mission completed
+            </div>
+        </div>
+
+        {% else %}
+        <div class="alert alert-danger d-flex align-items-center w-25" role="alert">
+            <svg class="bi flex-shrink-0 me-2" width="24" height="24" role="img" aria-label="Danger:"><use xlink:href="#check-circle-fill"/></svg>
+            <div>
+                Mission is not completed.
+            </div>
+        </div>
+
+        {% endif %}
+
+        {% endblock %}
